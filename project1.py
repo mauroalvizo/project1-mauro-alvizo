@@ -2,13 +2,14 @@ from flask import Flask
 import flask
 import requests
 import json
-from dotenv import load_dotenv, find_dotenv
+
+# from dotenv import load_dotenv, find_dotenv
 from os import getenv
 import random
 
-load_dotenv(find_dotenv())
+# load_dotenv(find_dotenv())
 
-
+# Picks a random movie when called and then returns the movie ID from TMDB
 def random_movie_selector():
     # Puss n Boots = 315162
     # Spiderverse = 324857
@@ -20,6 +21,8 @@ def random_movie_selector():
     return random_movie_number
 
 
+# I added this extra function to make each refresh unique. All it does is pick a random color
+# hex code tho not that cool imo
 def random_color_selector():
     color_code_list = [
         "#4b586e",
@@ -35,6 +38,8 @@ def random_color_selector():
     return random_color
 
 
+# This function will access raw json movie data and then return it to be sorted through else where
+# It has access to the API key which is hidden
 def grab_bulk_movie_data():
     TMDB_PATH_URL = "https://api.themoviedb.org/3/movie/"
     movie_id = str(random_movie_selector())
@@ -51,6 +56,8 @@ def grab_bulk_movie_data():
     return movie_data
 
 
+# This function will take in the given movie and then use the Wikipedia api to search for it's webpage
+# It returns the formatted link to the webpage
 def wiki_link_grab(movie_name):
 
     api_url = "https://en.wikipedia.org/w/api.php"
@@ -76,19 +83,21 @@ def wiki_link_grab(movie_name):
 
 app = flask.Flask(__name__)
 
-
+# The about page is a fun extra I added testing out buttons and redirects
 @app.route("/about_page")
 def about_page():
     background_color = random_color_selector()
     return flask.render_template("about_page.html", background_color=background_color)
 
 
+# This is my main function/ webpage. Everything is triggered through here and will use the same random movie from this instance
 @app.route("/")
 def index():
 
     # reminder: once this command runs you must use this instance to get the correct random movie
     movie_data = grab_bulk_movie_data()
 
+    # These lines format the movie data json
     movie_name = movie_data.json()["title"]
     movie_genre = [genre["name"] for genre in movie_data.json()["genres"]]
     movie_tagline = movie_data.json()["tagline"]

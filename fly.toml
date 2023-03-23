@@ -1,4 +1,4 @@
-# fly.toml file generated for moviemauro on 2023-03-23T11:26:31-05:00
+# fly.toml file generated for moviemauro on 2023-03-23T11:33:18-05:00
 
 app = "moviemauro"
 kill_signal = "SIGINT"
