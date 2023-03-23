@@ -22,6 +22,10 @@
                 font-weight: bold;
                 text-align: center;
             }
+            img {
+                border: 2px solid #ccc;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            }
         </style>
     </head>
     <body>
@@ -37,9 +41,11 @@
 
         <h2>{{movie_tagline}} </h2>
         <p>Genres: {{movie_genre}}</p>
+
         <img src="{{ completed_image_URL}}" alt="Poster URL">
+
         <p></p>
-        <a href="{{ dynamic_link }}">
+        <a href="{{ movie_wiki_URL }}">
         <button2>Visit Wikipedia Link</button2>
         </a>
         
