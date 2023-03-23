@@ -1,6 +1,6 @@
-# fly.toml file generated for weathered-flower-7768 on 2023-03-23T07:57:25-05:00
+# fly.toml file generated for moviemauro on 2023-03-23T11:26:31-05:00
 
-app = "weathered-flower-7768"
+app = "moviemauro"
 kill_signal = "SIGINT"
 kill_timeout = 5
 primary_region = "dfw"
