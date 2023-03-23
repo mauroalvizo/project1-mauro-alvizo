@@ -1,4 +1,5 @@
 from flask import Flask
+import flask
 import requests
 import json
 from dotenv import load_dotenv, find_dotenv
@@ -32,10 +33,10 @@ def grab_bulk_movie_data():
     return movie_data
 
     
-app = Flask(__name__)
+app = flask.Flask(__name__)
 
 @app.route('/')
-def test():
+def index():
     
     #reminder: once this command runs you must use this instance to get the correct random movie
     movie_data = grab_bulk_movie_data()
@@ -49,8 +50,7 @@ def test():
     BASE_IMAGE_URL = "https://image.tmdb.org/t/p/w500"
     completed_image_URL = BASE_IMAGE_URL + movie_image
     
+    return flask.render_template("index.html", movie_name=movie_name, movie_genre=movie_genre, movie_tagline=movie_tagline, completed_image_URL=completed_image_URL)
     
-    return f'Random Movie Data: TITLE = {movie_name}   GENRE = {movie_genre}   IMAGEURL = {completed_image_URL}    TAGLINE = {movie_tagline}'
-
-
+   # return f'Random Movie Data: TITLE = {movie_name}   GENRE = {movie_genre}   IMAGEURL = {completed_image_URL}    TAGLINE = {movie_tagline}'
 
