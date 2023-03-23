@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<DOCTYPE html>
 <html>
     <head>
         
@@ -28,26 +28,15 @@
         <div class="toolbar">
             <h1>Mauro's Movie Manifest</h1>
             <div>
-              <form action="{{ url_for('about_page') }}" method="get">
-                <button type="submit">About Page</button>
+              <form action="/" method="get">
+                <button type="submit">Go Back</button>
             </div>
           </div>
-        
-        <h1>{{movie_name}}</h1>
 
-        <h2>{{movie_tagline}} </h2>
-        <p>Genres: {{movie_genre}}</p>
-        <img src="{{ completed_image_URL}}" alt="Poster URL">
-        <p></p>
-        <a href="{{ dynamic_link }}">
-        <button2>Visit Wikipedia Link</button2>
-        </a>
-        
-        
-        <script>
-            
-          </script>
+          <h1> I stayed awake for 24 hours to complete this website! </h1>
+          <h2> Shoutout to the boys! Also Happy Birthday Nick </h2>
+          <img src="{{ 'https://upload.wikimedia.org/wikipedia/en/thumb/5/52/American-psycho-patrick-bateman.jpg/220px-American-psycho-patrick-bateman.jpg' }}" alt="Poster URL">
 
+          
     </body>
-    
 </html>
