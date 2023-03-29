@@ -1,69 +1,91 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        
-        <style>
-            .toolbar {
-                background-color: #333;
-                color: #fff;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 10px;
-            }
-            .button3 {
-                background-color: #4CAF50; /* Green */
-                border: none;
-                color: white;
-                padding: 15px 32px;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 16px;
-              }
-            body {
-                text-align: center;
-                background-color: {{ background_color }};
-                font-family: 'Proxima Nova', sans-serif;
-            }
-            h1 {
-                font-size: 48px;
-                font-weight: bold;
-                text-align: center;
-            }
-            img {
-                border: 2px solid #ccc;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            }
-            
-            
-        </style>
-    </head>
-    <body>
-        <div class="toolbar">
-            <h1>Mauro's Movie Manifest</h1>
-            <div>
-              <form action="{{ url_for('about_page') }}" method="get">
-                <button type="submit">About Page</button>
-            </div>
-          </div>
-        <h1>{{movie_name}}</h1>
 
-        <h2>{{movie_tagline}} </h2>
-        <p>Genres: {{movie_genre}}</p>
+<head>
 
-        <img src="{{ completed_image_URL}}" alt="Poster URL">
+    <style>
+        .toolbar {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
 
-        <p></p>
-        <a href="{{ movie_wiki_URL }}">
+        .button3 {
+            background-color: #580707;
+            border: none;
+            color: rgb(252, 252, 252);
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+
+        .button2 {
+            background-color: #580707;
+            border: none;
+            color: rgb(252, 252, 252);
+            padding: 50px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+
+        body {
+            text-align: center;
+            background-color: {{background_color}};
+            font-family: 'Proxima Nova',
+            sans-serif;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        img {
+            border: 2px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="toolbar">
+        <img src="https://lh3.googleusercontent.com/fZ-xB209yiwJbc0-C1h45BzQ4oRXY0ntyxp0ZkT_J6wRvpFPzQZtqyx_1xIHItcqh7eaoPbJ-_jzvdcWGj7jJVOuTXWLxdodFQ0AtJL8PRJsvWpWdtNCnRo1bzZkzeycuePaYiTiPqpG2Pc3AWBsuF9kHqZBmAQdsS4g3AGdS8EEb5teA_6WUaU99TJIpK8wxPXCTk8GByga-83YWFbFa0dhoQgbhRoqADQhUb__QDd38YHrSnQRlfKH-2w5HgZ4vvFzo6sm5ueZ1podu4AWtzi8wb12Rxu6GZvib3cK-eWnHCDowAMIrwcEtQB07j0JW5Lhy3X2dArglvjagZNlwnk97aeHozwoILrn9xhmtB9IAfQVceI6Isx5qWQO6hTNy_66Djv0Hog3MIE2UN_A-FR5PYowkvv0jUg-QZ17lSsyiGv3zUD1J_dGzDU89DKxpzPI-YP9e1t4p2N2_bIIeKirvaYSSy1T9BboyRWTCAACKrqhs6OnhxE5BAN7DtTGhWhNnRqqJsJz_6h7scmUS1dOglAT7Rxx1QYrCo6JXW5Hh-BlROMRVQJOF6yYSZQkqtWVwQxJOo-Y5IgqOF_tXbDSFkpDEJARnDJ-Tmbf04euiegJCYaZO_AtWwLA-EVY425UA54CM72RDRxlegCmrW7llnVANvScxS7jaozoxHpiUuAYHQjMwSeI6pMLMVqkbLrgySsITlpi9wbTsw59mL2mAbaBMoiHNO4sPMQIrd8UYzCEadQi8TeY0cP-oap73GABJ5bau1m4mSysng93tQFoGdMtGp8aBlheMns7U_CPbYwCojPo662RyXU_gRL3JnqkUWcHLxlez1-mdB-T-98aOySM6Pp1jC21eoC0NDSVQ5i0gn5b5vWfi5yosNYgFjo1O_x6zYqmxDdvcc6s8KlJbaxTRYrqddQ5SaCIbV6uehmWJjWupfH6FBUvd0JKEwik5Aj0W48hkokVWQ=w752-h160-s-no?authuser=0"
+            alt="MMM Logo" width="600" height="120">
+        <div>
+            <a href="{{ url_for('about_page') }}">
+                <button2 class="button2">About Page</button2>
+            </a>
+            <a href="{{ url_for('about_page') }}">
+                <button2 class="button2">Button</button2>
+            </a>
+        </div>
+
+    </div>
+    <h1>{{movie_name}}</h1>
+
+    <h2>{{movie_tagline}} </h2>
+    <p>Genres: {{movie_genre}}</p>
+
+    <img src="{{ completed_image_URL}}" alt="Poster URL">
+
+    <p></p>
+    <a href="{{ movie_wiki_URL }}">
         <button3 class="button3">Visit Wikipedia Link</button3>
-        </a>
-        
-        
-        <script>
-            
-          </script>
+    </a>
 
-    </body>
-    
+
+    <script>
+
+    </script>
+
+</body>
+
 </html>
