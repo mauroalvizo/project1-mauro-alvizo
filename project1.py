@@ -102,7 +102,7 @@ def index():
     movie_genre = [genre["name"] for genre in movie_data.json()["genres"]]
     movie_tagline = movie_data.json()["tagline"]
 
-    background_color = random_color_selector()
+    background_color = "#4b586e"
 
     movie_image = movie_data.json()["poster_path"]
     BASE_IMAGE_URL = "https://image.tmdb.org/t/p/w500"
