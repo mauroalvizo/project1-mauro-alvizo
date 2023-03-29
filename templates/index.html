@@ -11,7 +11,16 @@
                 align-items: center;
                 padding: 10px;
             }
-
+            .button3 {
+                background-color: #4CAF50; /* Green */
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+              }
             body {
                 text-align: center;
                 background-color: {{ background_color }};
@@ -26,6 +35,8 @@
                 border: 2px solid #ccc;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             }
+            
+            
         </style>
     </head>
     <body>
@@ -36,7 +47,6 @@
                 <button type="submit">About Page</button>
             </div>
           </div>
-        
         <h1>{{movie_name}}</h1>
 
         <h2>{{movie_tagline}} </h2>
@@ -46,7 +56,7 @@
 
         <p></p>
         <a href="{{ movie_wiki_URL }}">
-        <button2>Visit Wikipedia Link</button2>
+        <button3 class="button3">Visit Wikipedia Link</button3>
         </a>
         
         
